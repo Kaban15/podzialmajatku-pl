@@ -1,11 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
-import { Send } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 
 import { contactFormSchema, type ContactFormData } from "@/lib/schemas";
+import { sendContactEmail } from "@/lib/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -34,6 +36,8 @@ const subjects = [
 ];
 
 export function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -45,12 +49,28 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit(data: ContactFormData) {
-    console.log("Form submitted:", data);
-    toast.success("Wiadomość została wysłana!", {
-      description: "Skontaktujemy się z Tobą w ciągu 24 godzin.",
-    });
-    form.reset();
+  async function onSubmit(data: ContactFormData) {
+    setIsSubmitting(true);
+    try {
+      const result = await sendContactEmail(data);
+
+      if (result.success) {
+        toast.success("Wiadomość została wysłana!", {
+          description: "Skontaktujemy się z Tobą w ciągu 24 godzin.",
+        });
+        form.reset();
+      } else {
+        toast.error("Błąd wysyłania", {
+          description: result.error || "Spróbuj ponownie później.",
+        });
+      }
+    } catch {
+      toast.error("Błąd połączenia", {
+        description: "Sprawdź połączenie internetowe i spróbuj ponownie.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -154,9 +174,18 @@ export function ContactForm() {
           )}
         />
 
-        <Button type="submit" size="lg" className="w-full">
-          <Send className="size-4" />
-          Wyślij wiadomość
+        <Button
+          type="submit"
+          size="lg"
+          className="w-full"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? (
+            <Loader2 className="size-4 animate-spin" />
+          ) : (
+            <Send className="size-4" />
+          )}
+          {isSubmitting ? "Wysyłanie..." : "Wyślij wiadomość"}
         </Button>
       </form>
     </Form>
