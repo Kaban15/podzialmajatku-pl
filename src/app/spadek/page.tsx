@@ -4,9 +4,10 @@ import { ServiceSidebar } from "@/components/layout/ServiceSidebar";
 import { ServiceSchema } from "@/components/seo/ServiceSchema";
 
 export const metadata: Metadata = {
-  title: "Dział spadku i zachowek - Pomoc prawna w sprawach spadkowych",
+  title:
+    "Dział spadku Poznań - Radca prawny podział spadku | Kancelaria Lexperiens",
   description:
-    "Pomoc prawna w dziale spadku, zachowku i podziale nieruchomości odziedziczonej. Umowny i sądowy dział spadku. Bezpłatna konsultacja prawna.",
+    "Postępowanie działowe przy podziale spadku – umowny i sądowy dział spadku. Doświadczony radca prawny w Poznaniu. Kancelaria Lexperiens – pomoc prawna w sprawach spadkowych.",
 };
 
 export default function SpadekPage() {
@@ -14,7 +15,7 @@ export default function SpadekPage() {
     <>
       <ServiceSchema
         name="Dział spadku"
-        description="Profesjonalna pomoc prawna w sprawach działu spadku, zachowku i podziału odziedziczonego majątku między spadkobierców."
+        description="Postępowanie działowe przy podziale spadku – umowny i sądowy dział spadku. Profesjonalna pomoc prawna Kancelarii Lexperiens w Poznaniu."
         url="https://podzialmajatku.pl/spadek"
       />
 
@@ -26,108 +27,50 @@ export default function SpadekPage() {
             {/* Main Content - 2/3 */}
             <article className="lg:col-span-2">
               <h1 className="mb-6 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                Dział spadku – Pomoc w trudnych sprawach rodzinnych
+                Postępowanie działowe przy podziale spadku (dział spadku)
               </h1>
 
-              <p className="mb-8 text-lg leading-relaxed text-slate-600">
-                Sprawy spadkowe bywają skomplikowane zarówno pod względem
-                prawnym, jak i emocjonalnym. Po stwierdzeniu nabycia spadku
-                konieczne jest ustalenie, co wchodzi w skład spadku i jak
-                go podzielić między spadkobierców. Wypełnij formularz obok,
-                a pomożemy Ci przejść przez cały proces.
+              <p className="mb-6 text-lg leading-relaxed text-slate-600">
+                Często przy podziale spadku (postępowania o dział spadku),
+                dochodzi do sporu pomiędzy spadkobiercami. W takich sytuacjach
+                ważne jest, aby mieć świadomość możliwych do podjęcia kroków
+                prawnych. Postępowanie działowe przy podziale spadku może zostać
+                poprowadzone w dwóch odrębnych trybach, która uzależnione są od
+                woli wszystkich spadkobierców.
               </p>
 
-              {/* Section 1 */}
               <section className="mb-8">
                 <h2 className="mb-4 text-2xl font-semibold text-slate-900">
-                  Umowny czy sądowy dział spadku?
+                  Dwa tryby działu spadku
                 </h2>
-                <p className="mb-4 text-slate-600 leading-relaxed">
-                  Dział spadku może nastąpić na dwa sposoby. Wybór zależy
-                  przede wszystkim od relacji między spadkobiercami:
+                <p className="mb-4 leading-relaxed text-slate-600">
+                  Zgodnie z intencją ustawodawcy, przewidziane zostały dwa tryby
+                  dokonania działu spadku. Pierwszy z nich dotyczy umownej formy
+                  działu spadku i polega na zawarciu porozumienia (umowy)
+                  pomiędzy spadkobiercami w zakresie podziału majątku
+                  spadkowego. Ta forma przewidziana jest głównie dla sytuacji,
+                  w których każdy ze spadkobierców ma tożsame i zgodne stanowisko
+                  w zakresie działu spadku. Jest to również dużo sprawniejsze
+                  rozwiązanie z punktu widzenia czasu, aniżeli drugi tryb.
                 </p>
-                <ul className="mb-4 list-inside list-disc space-y-2 text-slate-600">
-                  <li>
-                    <strong>Dział umowny</strong> – wymaga zgody wszystkich
-                    spadkobierców. Jest szybszy, tańszy i mniej stresujący.
-                    Jeśli w skład spadku wchodzi nieruchomość, umowa musi
-                    mieć formę aktu notarialnego.
-                  </li>
-                  <li>
-                    <strong>Dział sądowy</strong> – konieczny, gdy
-                    spadkobiercy nie mogą dojść do porozumienia. Sąd ustala
-                    skład i wartość spadku, a następnie dokonuje podziału
-                    z uwzględnieniem interesów wszystkich stron.
-                  </li>
-                </ul>
-                <p className="text-slate-600 leading-relaxed">
-                  Niezależnie od wybranej drogi, warto skonsultować się
-                  z prawnikiem, aby zabezpieczyć swoje interesy i uniknąć
-                  kosztownych błędów.
+                <p className="mb-4 leading-relaxed text-slate-600">
+                  Drugim rozwiązaniem jest sądowy dział spadku, który polega na
+                  przeprowadzeniu postępowania sądowego w zakresie działu spadku
+                  i kończy się orzeczeniem sądu. Najczęściej drugi tryb jest
+                  przeznaczony dla spadkobierców, którzy nie mają wypracowanego
+                  jednolitego stanowiska w zakresie działu spadku. Oczywiście
+                  nie oznacza to, że spadkobiercy o zgodnych stanowiskach nie
+                  mogą dokonać działu spadku w trybie sądowym – taka sytuacja
+                  jest prawnie dopuszczalna.
                 </p>
-              </section>
-
-              {/* Section 2 */}
-              <section className="mb-8">
-                <h2 className="mb-4 text-2xl font-semibold text-slate-900">
-                  Czy zachowek wlicza się do podziału?
-                </h2>
-                <p className="mb-4 text-slate-600 leading-relaxed">
-                  Zachowek i dział spadku to dwie odrębne instytucje prawne,
-                  ale mogą się wzajemnie przenikać:
-                </p>
-                <ul className="mb-4 list-inside list-disc space-y-2 text-slate-600">
-                  <li>
-                    Zachowek przysługuje najbliższym członkom rodziny
-                    (dzieci, małżonek, rodzice), którzy zostali pominięci
-                    w testamencie lub otrzymali mniej niż im się należy
-                  </li>
-                  <li>
-                    Wysokość zachowku to co do zasady połowa wartości udziału
-                    spadkowego, który przypadłby przy dziedziczeniu ustawowym
-                    (2/3 dla małoletnich i trwale niezdolnych do pracy)
-                  </li>
-                  <li>
-                    Przy obliczaniu zachowku uwzględnia się darowizny
-                    dokonane za życia spadkodawcy oraz zapisy windykacyjne
-                  </li>
-                  <li>
-                    Roszczenie o zachowek przedawnia się po 5 latach od
-                    ogłoszenia testamentu
-                  </li>
-                </ul>
-              </section>
-
-              {/* Section 3 */}
-              <section className="mb-8">
-                <h2 className="mb-4 text-2xl font-semibold text-slate-900">
-                  Podział nieruchomości odziedziczonej przez kilka osób
-                </h2>
-                <p className="mb-4 text-slate-600 leading-relaxed">
-                  Odziedziczenie nieruchomości przez kilku spadkobierców
-                  tworzy współwłasność, która często jest źródłem
-                  konfliktów. Możliwe rozwiązania:
-                </p>
-                <ul className="mb-4 list-inside list-disc space-y-2 text-slate-600">
-                  <li>
-                    <strong>Podział fizyczny</strong> – np. podział domu na
-                    odrębne lokale lub działki na mniejsze parcele (jeśli
-                    jest to technicznie możliwe)
-                  </li>
-                  <li>
-                    <strong>Przejęcie przez jednego spadkobiercę</strong>{" "}
-                    – z obowiązkiem spłaty pozostałych według ich udziałów
-                    spadkowych
-                  </li>
-                  <li>
-                    <strong>Sprzedaż</strong> – i podział uzyskanej kwoty
-                    między spadkobierców proporcjonalnie do udziałów
-                  </li>
-                </ul>
-                <p className="text-slate-600 leading-relaxed">
-                  Przy podziale nieruchomości kluczowa jest jej prawidłowa
-                  wycena. Sąd powołuje biegłego rzeczoznawcę, ale strony
-                  mogą również przedstawić własne operaty szacunkowe.
+                <p className="leading-relaxed text-slate-600">
+                  Za ustawodawcą należy powtórzyć –{" "}
+                  <em className="text-slate-700">
+                    &bdquo;Dział spadku może nastąpić bądź na mocy umowy między
+                    wszystkimi spadkobiercami, bądź na mocy orzeczenia sądu na
+                    żądanie któregokolwiek ze spadkobierców.&rdquo;
+                  </em>{" "}
+                  – tak art. 1037 § 1 k.c.
                 </p>
               </section>
 
@@ -137,9 +80,8 @@ export default function SpadekPage() {
                   Potrzebujesz pomocy w sprawie spadkowej?
                 </p>
                 <p className="mt-1 text-sm text-slate-600">
-                  Skorzystaj z formularza obok lub zadzwoń – pierwsza
-                  konsultacja jest bezpłatna. Pomożemy Ci na każdym etapie
-                  postępowania.
+                  Skorzystaj z formularza obok lub zadzwoń – pomożemy Ci na
+                  każdym etapie postępowania o dział spadku.
                 </p>
               </div>
             </article>

@@ -24,7 +24,7 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <Scale className="size-5 text-white" />
               <span className="text-lg font-bold text-white">
-                podzialmajatku.pl
+                Lexperiens Kancelaria Radców Prawnych
               </span>
             </div>
             <p className="text-sm leading-relaxed text-slate-400">
@@ -32,27 +32,41 @@ export function Footer() {
               zniesienia współwłasności i działu spadku.
             </p>
             <ul className="space-y-2 text-sm">
-              <li className="flex items-center gap-2">
-                <Phone className="size-4 shrink-0" />
-                <a
-                  href="tel:+48123456789"
-                  className="transition-colors hover:text-white"
-                >
-                  123 456 789
-                </a>
+              <li className="flex items-start gap-2">
+                <Phone className="mt-0.5 size-4 shrink-0" />
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="tel:+48618937504"
+                    className="transition-colors hover:text-white"
+                  >
+                    +48 61 893 75 04
+                  </a>
+                  <a
+                    href="tel:+48797623957"
+                    className="transition-colors hover:text-white"
+                  >
+                    +48 797 623 957
+                  </a>
+                  <a
+                    href="tel:+48789483216"
+                    className="transition-colors hover:text-white"
+                  >
+                    +48 789 483 216
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="size-4 shrink-0" />
                 <a
-                  href="mailto:kontakt@podzialmajatku.pl"
+                  href="mailto:kancelaria@lexperiens.pl"
                   className="transition-colors hover:text-white"
                 >
-                  kontakt@podzialmajatku.pl
+                  kancelaria@lexperiens.pl
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="size-4 shrink-0" />
-                <span>Warszawa, Polska</span>
+                <span>ul. Mikołaja Reja 1/8, 60-826 Poznań</span>
               </li>
             </ul>
           </div>
@@ -98,7 +112,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="mt-10 border-t border-slate-800 pt-6 text-center text-sm text-slate-500">
-          &copy; {currentYear} podzialmajatku.pl. Wszelkie prawa zastrzeżone.
+          &copy; {currentYear} Lexperiens Kancelaria Radców Prawnych Zgłobicki Rohde sp. p. Wszelkie prawa zastrzeżone.
         </div>
       </div>
     </footer>

@@ -4,9 +4,10 @@ import { ServiceSidebar } from "@/components/layout/ServiceSidebar";
 import { ServiceSchema } from "@/components/seo/ServiceSchema";
 
 export const metadata: Metadata = {
-  title: "Podział majątku po rozwodzie - Adwokat Warszawa | Kancelaria",
+  title:
+    "Podział majątku po rozwodzie Poznań - Radca prawny | Kancelaria Lexperiens",
   description:
-    "Profesjonalna pomoc prawna w podziale majątku po rozwodzie. Wspólność i rozdzielność majątkowa, nierówne udziały, kredyt hipoteczny. Bezpłatna konsultacja.",
+    "Postępowanie działowe przy podziale majątku wspólnego małżonków po rozwodzie lub rozdzielności majątkowej. Radca prawny podział majątku Poznań – Kancelaria Lexperiens.",
 };
 
 export default function RozwodPage() {
@@ -14,7 +15,7 @@ export default function RozwodPage() {
     <>
       <ServiceSchema
         name="Podział majątku po rozwodzie"
-        description="Profesjonalna pomoc prawna w sprawach podziału majątku wspólnego po rozwodzie, w tym nieruchomości, oszczędności i kredytów."
+        description="Postępowanie działowe przy podziale majątku wspólnego małżonków po rozwodzie lub rozdzielności majątkowej. Kancelaria Lexperiens Poznań."
         url="https://podzialmajatku.pl/rozwod"
       />
 
@@ -28,94 +29,39 @@ export default function RozwodPage() {
             {/* Main Content - 2/3 */}
             <article className="lg:col-span-2">
               <h1 className="mb-6 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                Podział majątku po rozwodzie – Co Ci się należy?
+                Postępowanie działowe przy podziale majątku wspólnego małżonków
+                (po rozwodzie lub rozdzielności majątkowej)
               </h1>
 
-              <p className="mb-8 text-lg leading-relaxed text-slate-600">
-                Rozwód to nie tylko koniec związku, ale również konieczność
-                podziału wspólnie zgromadzonego majątku. Niezależnie od tego,
-                czy sprawa dotyczy mieszkania, oszczędności czy wspólnej firmy
-                – warto znać swoje prawa i możliwości. Wypełnij formularz
-                obok, a pomożemy Ci ocenić Twoją sytuację.
+              <p className="mb-6 text-lg leading-relaxed text-slate-600">
+                Postępowanie o podział majątku wspólnego po ustaniu wspólności
+                majątkowej między małżonkami nie zostało unormowane w kodeksie
+                postępowania cywilnego w sposób całościowy. Dlatego też
+                postępowanie to charakteryzuje się większym poziomem
+                skomplikowania, który wymaga udziału doświadczonego pełnomocnika
+                procesowego.
               </p>
 
-              {/* Section 1 */}
               <section className="mb-8">
                 <h2 className="mb-4 text-2xl font-semibold text-slate-900">
-                  Wspólność a rozdzielność majątkowa – różnice
+                  Kluczowe regulacje prawne
                 </h2>
-                <p className="mb-4 text-slate-600 leading-relaxed">
-                  W polskim prawie obowiązuje zasada wspólności majątkowej
-                  małżeńskiej. Oznacza to, że od momentu zawarcia związku
-                  małżeńskiego, wszystko co nabędziecie, staje się wspólną
-                  własnością obojga małżonków. Dotyczy to w szczególności:
+                <p className="mb-4 leading-relaxed text-slate-600">
+                  Zasadnicze znaczenie ma w tej mierze art. 567 § 1 k.p.c.,
+                  zgodnie z którym w postępowaniu o podział majątku po ustaniu
+                  wspólności sąd rozstrzyga także o żądaniu ustalenia nierównych
+                  udziałów małżonków w majątku wspólnym oraz o tym, jakie
+                  wydatki, nakłady i inne świadczenia z majątku wspólnego na
+                  rzecz majątku osobistego lub odwrotnie podlegają zwrotowi.
                 </p>
-                <ul className="mb-4 list-inside list-disc space-y-2 text-slate-600">
-                  <li>Wynagrodzeń za pracę i dochodów z działalności gospodarczej</li>
-                  <li>Nieruchomości kupionych w trakcie małżeństwa</li>
-                  <li>Oszczędności zgromadzonych na wspólnych i indywidualnych kontach</li>
-                  <li>Środków zgromadzonych w OFE i na subkontach ZUS</li>
-                </ul>
-                <p className="text-slate-600 leading-relaxed">
-                  Rozdzielność majątkowa może zostać ustanowiona intercyzą
-                  (przed lub w trakcie małżeństwa) lub orzeczeniem sądu.
-                  W takim przypadku każdy z małżonków zarządza swoim majątkiem
-                  samodzielnie.
-                </p>
-              </section>
-
-              {/* Section 2 */}
-              <section className="mb-8">
-                <h2 className="mb-4 text-2xl font-semibold text-slate-900">
-                  Nierówne udziały w majątku – kiedy można ich żądać?
-                </h2>
-                <p className="mb-4 text-slate-600 leading-relaxed">
-                  Co do zasady, udziały małżonków w majątku wspólnym są równe
-                  – każdy ma prawo do 50%. Jednak w uzasadnionych przypadkach
-                  sąd może ustalić nierówne udziały. Warunkiem jest
-                  wykazanie, że:
-                </p>
-                <ul className="mb-4 list-inside list-disc space-y-2 text-slate-600">
-                  <li>Małżonkowie w różnym stopniu przyczynili się do powstania majątku</li>
-                  <li>Jeden z małżonków rażąco trwonił majątek wspólny</li>
-                  <li>Istnieją ważne powody przemawiające za nierównym podziałem</li>
-                </ul>
-                <p className="text-slate-600 leading-relaxed">
-                  Warto podkreślić, że prowadzenie gospodarstwa domowego
-                  i wychowanie dzieci jest traktowane na równi z pracą
-                  zarobkową. Sam fakt, że jedno z małżonków nie pracowało
-                  zawodowo, nie jest podstawą do zmniejszenia jego udziału.
-                </p>
-              </section>
-
-              {/* Section 3 */}
-              <section className="mb-8">
-                <h2 className="mb-4 text-2xl font-semibold text-slate-900">
-                  Co z kredytem hipotecznym po rozwodzie?
-                </h2>
-                <p className="mb-4 text-slate-600 leading-relaxed">
-                  Kredyt hipoteczny to jedno z najtrudniejszych zagadnień
-                  przy podziale majątku. Kluczowe fakty:
-                </p>
-                <ul className="mb-4 list-inside list-disc space-y-2 text-slate-600">
-                  <li>
-                    Rozwód nie zwalnia żadnego z małżonków z obowiązku spłaty
-                    kredytu wobec banku – oboje pozostają dłużnikami solidarnymi
-                  </li>
-                  <li>
-                    Sąd dokonujący podziału majątku nie może podzielić długów,
-                    ale uwzględnia je przy ustalaniu wartości majątku
-                  </li>
-                  <li>
-                    Możliwe rozwiązania to: przejęcie kredytu przez jednego
-                    małżonka, sprzedaż nieruchomości i spłata kredytu, lub
-                    dalsze wspólne spłacanie
-                  </li>
-                </ul>
-                <p className="text-slate-600 leading-relaxed">
-                  Każda sytuacja wymaga indywidualnej analizy prawnej
-                  i finansowej. Skontaktuj się z nami, aby omówić najlepsze
-                  rozwiązanie w Twojej sprawie.
+                <p className="leading-relaxed text-slate-600">
+                  W pozostałym zakresie w rozważanym postępowaniu stosuje się
+                  odpowiednio przepisy o postępowaniu o dział spadku{" "}
+                  <em className="text-slate-500">
+                    (postanowienie Sądu Najwyższego z dnia 10 marca 2023 r.,
+                    sygn. akt: II CSKP 569/22)
+                  </em>
+                  .
                 </p>
               </section>
 
@@ -125,8 +71,8 @@ export default function RozwodPage() {
                   Potrzebujesz pomocy w podziale majątku po rozwodzie?
                 </p>
                 <p className="mt-1 text-sm text-slate-600">
-                  Wypełnij formularz kontaktowy obok lub zadzwoń – pierwsza
-                  konsultacja jest bezpłatna.
+                  Wypełnij formularz kontaktowy obok lub zadzwoń – nasz
+                  doświadczony zespół pomoże Ci na każdym etapie postępowania.
                 </p>
               </div>
             </article>

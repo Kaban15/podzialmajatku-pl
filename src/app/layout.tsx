@@ -12,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Podział Majątku - Pomoc Prawna | podzialmajatku.pl",
+  title: "Podział Majątku - Kancelaria Radców Prawnych Lexperiens Poznań",
   description:
-    "Profesjonalna pomoc prawna w sprawach podziału majątku, rozwodów, zniesienia współwłasności i działu spadku. Skontaktuj się z nami.",
+    "Kancelaria Radców Prawnych Lexperiens w Poznaniu — profesjonalna pomoc prawna w sprawach podziału majątku, rozwodów, zniesienia współwłasności i działu spadku.",
 };
 
 export default function RootLayout({

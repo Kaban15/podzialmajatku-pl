@@ -35,11 +35,23 @@ export function ServiceSidebar() {
             </li>
           ))}
         </ul>
-        <div className="mt-5">
+        <div className="mt-5 space-y-2">
           <Button asChild variant="outline" className="w-full">
-            <a href="tel:+48123456789">
+            <a href="tel:+48618937504">
               <Phone className="size-4" />
-              Zadzwoń: 123 456 789
+              +48 61 893 75 04
+            </a>
+          </Button>
+          <Button asChild variant="outline" className="w-full">
+            <a href="tel:+48797623957">
+              <Phone className="size-4" />
+              +48 797 623 957
+            </a>
+          </Button>
+          <Button asChild variant="outline" className="w-full">
+            <a href="tel:+48789483216">
+              <Phone className="size-4" />
+              +48 789 483 216
             </a>
           </Button>
         </div>

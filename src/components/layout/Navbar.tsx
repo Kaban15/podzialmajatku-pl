@@ -20,8 +20,8 @@ const navLinks = [
   { href: "/kontakt", label: "Kontakt" },
 ];
 
-const PHONE_NUMBER = "+48123456789";
-const PHONE_DISPLAY = "123 456 789";
+const PHONE_NUMBER = "+48618937504";
+const PHONE_DISPLAY = "+48 61 893 75 04";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -33,7 +33,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <Scale className="size-6 text-primary" />
           <span className="text-lg font-bold text-primary">
-            podzialmajatku.pl
+            Lexperiens
           </span>
         </Link>
 
@@ -71,7 +71,7 @@ export function Navbar() {
             <SheetHeader>
               <SheetTitle className="flex items-center gap-2">
                 <Scale className="size-5 text-primary" />
-                podzialmajatku.pl
+                Lexperiens
               </SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-1 px-4">
