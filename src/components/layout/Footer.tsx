@@ -7,11 +7,6 @@ const specializations = [
   { href: "/zniesienie-wspolwlasnosci", label: "Zniesienie współwłasności" },
 ];
 
-const news = [
-  "Dział spadku, postępowania działowe i zagadnienia pochodne, które są z nimi nierozerwalnie związane",
-  "Cecha wspólna rozstrzygnięć wydawanych w sprawach działowych",
-  "Ustalenie, czy określona nieruchomość stanowi własność innych osób niż uczestnicy postępowania działowego",
-];
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -41,7 +36,7 @@ export function Footer() {
       {/* Dark footer */}
       <div className="bg-[#252525] text-slate-300">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
 
             {/* Column 1: Lexperiens */}
             <div>
@@ -75,22 +70,7 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Column 3: Aktualności */}
-            <div>
-              <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
-                Aktualności
-              </h3>
-              <div className="mb-4 h-px w-full bg-slate-600" />
-              <ul className="space-y-3 text-sm">
-                {news.map((item, i) => (
-                  <li key={i}>
-                    <span className="font-medium text-slate-300 leading-snug">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 4: Kontakt */}
+            {/* Column 3: Kontakt */}
             <div>
               <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
                 Kontakt
