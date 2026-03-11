@@ -45,33 +45,35 @@ export function HowWeWork() {
     <section className="flex flex-col gap-8 w-full my-12">
       <h2 className="text-4xl font-serif text-slate-800">Jak działamy?</h2>
 
-      <Tabs defaultValue="krok-1" className="flex flex-col lg:flex-row gap-8 items-start w-full">
-        <TabsList className="flex flex-col h-auto w-full lg:w-1/3 bg-transparent p-0 space-y-1 items-start justify-start">
+      <Tabs defaultValue="krok-1" className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
+        <TabsList className="md:col-span-4 flex flex-col h-auto bg-transparent p-0 space-y-2 items-start justify-start">
           {steps.map((step) => (
             <TabsTrigger
               key={step.value}
               value={step.value}
-              className="w-full justify-start text-left px-6 py-4 text-base font-normal text-slate-500 data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm border-l-4 border-transparent data-[state=active]:border-blue-600 rounded-none transition-all"
+              className="w-full justify-start text-left px-6 py-4 text-base text-slate-600 bg-transparent hover:bg-slate-50 data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-md border-l-4 border-transparent data-[state=active]:border-blue-600 rounded-none transition-all whitespace-normal h-auto"
             >
               {step.trigger}
             </TabsTrigger>
           ))}
         </TabsList>
 
-        {steps.map((step) => (
-          <TabsContent
-            key={step.value}
-            value={step.value}
-            className="w-full lg:w-2/3 mt-0"
-          >
-            <div className="bg-white p-8 shadow-sm">
-              <h3 className="mb-3 text-lg font-semibold text-slate-900">
-                {step.trigger}
-              </h3>
-              <p className="leading-relaxed text-slate-600">{step.content}</p>
-            </div>
-          </TabsContent>
-        ))}
+        <div className="md:col-span-8">
+          {steps.map((step) => (
+            <TabsContent
+              key={step.value}
+              value={step.value}
+              className="mt-0 w-full outline-none"
+            >
+              <div className="bg-white p-8 md:p-10 shadow-[0_2px_20px_rgb(0,0,0,0.04)] rounded-xl border border-slate-100">
+                <h3 className="text-3xl font-serif text-[#0088cc] mb-4">
+                  {step.trigger}
+                </h3>
+                <p className="leading-relaxed text-slate-600">{step.content}</p>
+              </div>
+            </TabsContent>
+          ))}
+        </div>
       </Tabs>
     </section>
   );
