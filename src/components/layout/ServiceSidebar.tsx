@@ -1,5 +1,4 @@
 import { Shield, Clock, Users, Phone } from "lucide-react";
-import { ContactForm } from "@/components/forms/ContactForm";
 import { Button } from "@/components/ui/button";
 
 const reasons = [
@@ -11,17 +10,6 @@ const reasons = [
 export function ServiceSidebar() {
   return (
     <aside className="space-y-6 lg:sticky lg:top-24">
-      {/* Contact Form Card */}
-      <div className="rounded-xl border bg-white p-6 shadow-lg">
-        <h2 className="mb-1 text-lg font-semibold text-slate-900">
-          Bezpłatna konsultacja
-        </h2>
-        <p className="mb-5 text-sm text-slate-500">
-          Opisz swoją sprawę, odezwiemy się w ciągu 24h.
-        </p>
-        <ContactForm />
-      </div>
-
       {/* Why Us Card */}
       <div className="rounded-xl border bg-slate-50 p-6">
         <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-900">
