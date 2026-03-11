@@ -1,5 +1,6 @@
-import { Shield, Clock, Users, CheckCircle } from "lucide-react";
-import { ContactForm } from "@/components/forms/ContactForm";
+import Link from "next/link";
+import { Shield, Clock, Users, CheckCircle, Scale, FileText, Home as HomeIcon, Info } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const benefits = [
   "Wieloletnie doświadczenie w prowadzeniu postępowań działowych",
@@ -13,19 +14,56 @@ const benefits = [
   "Transparentność i bieżące przekazywanie informacji Klientom na temat statusu ich spraw",
 ];
 
+const tiles = [
+  {
+    title: "Rozwód",
+    href: "/rozwod",
+    icon: Scale,
+    description: "Podział majątku wspólnego małżonków po rozwodzie",
+  },
+  {
+    title: "Spadek",
+    href: "/spadek",
+    icon: FileText,
+    description: "Umowny i sądowy dział spadku",
+  },
+  {
+    title: "Współwłasność",
+    href: "/zniesienie-wspolwlasnosci",
+    icon: HomeIcon,
+    description: "Zniesienie współwłasności nieruchomości",
+  },
+  {
+    title: "O nas",
+    href: "/o-nas",
+    icon: Info,
+    description: "Poznaj Kancelarię Lexperiens",
+  },
+];
+
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
-          {/* Left: Text */}
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
           <div className="space-y-6">
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
               Profesjonalna pomoc w{" "}
               <span className="text-primary">podziale majątku</span>
             </h1>
-            <p className="max-w-lg text-lg leading-relaxed text-slate-600">
+            <p className="text-base text-slate-500">
+              Serwis prowadzony przez{" "}
+              <a
+                href="https://lexperiens.pl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                Kancelarię Prawną Lexperiens
+              </a>
+            </p>
+            <p className="max-w-2xl text-lg leading-relaxed text-slate-600">
               Specjalizujemy się w sprawach podziału majątku po rozwodzie,
               dziale spadku oraz zniesieniu współwłasności. Zapewniamy
               indywidualne podejście i skuteczne rozwiązania prawne.
@@ -37,9 +75,7 @@ export default function Home() {
                   <p className="text-sm font-semibold text-slate-900">
                     Doświadczenie
                   </p>
-                  <p className="text-xs text-slate-500">
-                    Wieloletnia praktyka
-                  </p>
+                  <p className="text-xs text-slate-500">Wieloletnia praktyka</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -48,9 +84,7 @@ export default function Home() {
                   <p className="text-sm font-semibold text-slate-900">
                     Szybki kontakt
                   </p>
-                  <p className="text-xs text-slate-500">
-                    Odpowiedź w 24h
-                  </p>
+                  <p className="text-xs text-slate-500">Odpowiedź w 24h</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -59,23 +93,34 @@ export default function Home() {
                   <p className="text-sm font-semibold text-slate-900">
                     Indywidualne podejście
                   </p>
-                  <p className="text-xs text-slate-500">
-                    Każda sprawa jest inna
-                  </p>
+                  <p className="text-xs text-slate-500">Każda sprawa jest inna</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right: Contact Form */}
-          <div className="rounded-xl border bg-white p-6 shadow-lg sm:p-8">
-            <h2 className="mb-1 text-xl font-semibold text-slate-900">
-              Bezpłatna konsultacja
-            </h2>
-            <p className="mb-6 text-sm text-slate-500">
-              Wypełnij formularz, a nasz prawnik skontaktuje się z Tobą.
-            </p>
-            <ContactForm />
+          {/* Tiles grid */}
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {tiles.map((tile) => {
+              const Icon = tile.icon;
+              return (
+                <Link key={tile.href} href={tile.href}>
+                  <Card className="h-full cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+                    <CardContent className="flex flex-col items-center justify-center gap-4 p-6 text-center">
+                      <div className="flex size-14 items-center justify-center rounded-full bg-primary/10">
+                        <Icon className="size-7 text-primary" />
+                      </div>
+                      <p className="text-lg font-semibold text-slate-900">
+                        {tile.title}
+                      </p>
+                      <p className="text-sm text-slate-500">
+                        {tile.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

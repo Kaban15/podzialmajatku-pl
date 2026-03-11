@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Scale, Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const quickLinks = [
   { href: "/", label: "Strona główna" },
@@ -21,11 +22,14 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Column 1: Logo + Description + Contact */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Scale className="size-5 text-white" />
-              <span className="text-lg font-bold text-white">
-                Lexperiens Kancelaria Radców Prawnych
-              </span>
+            <div>
+              <Image
+                src="/logo.png"
+                alt="Lexperiens Kancelaria Prawna"
+                width={150}
+                height={50}
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-sm leading-relaxed text-slate-400">
               Profesjonalna pomoc prawna w sprawach podziału majątku, rozwodów,
@@ -112,7 +116,20 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="mt-10 border-t border-slate-800 pt-6 text-center text-sm text-slate-500">
-          &copy; {currentYear} Lexperiens Kancelaria Radców Prawnych Zgłobicki Rohde sp. p. Wszelkie prawa zastrzeżone.
+          <p>
+            Projekt prowadzony przez Kancelarię Prawną{" "}
+            <a
+              href="https://lexperiens.pl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-300 transition-colors hover:text-white"
+            >
+              Lexperiens
+            </a>
+          </p>
+          <p className="mt-1">
+            &copy; {currentYear} Lexperiens Kancelaria Radców Prawnych Zgłobicki Rohde sp. p. Wszelkie prawa zastrzeżone.
+          </p>
         </div>
       </div>
     </footer>

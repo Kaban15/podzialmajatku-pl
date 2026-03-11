@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import { Phone, Menu, Scale } from "lucide-react";
+import { Phone, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -30,11 +31,15 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <Scale className="size-6 text-primary" />
-          <span className="text-lg font-bold text-primary">
-            Lexperiens
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Lexperiens Kancelaria Prawna"
+            width={150}
+            height={50}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}
@@ -69,9 +74,14 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-72">
             <SheetHeader>
-              <SheetTitle className="flex items-center gap-2">
-                <Scale className="size-5 text-primary" />
-                Lexperiens
+              <SheetTitle>
+                <Image
+                  src="/logo.png"
+                  alt="Lexperiens Kancelaria Prawna"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto object-contain"
+                />
               </SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-1 px-4">

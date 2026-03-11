@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ServiceSidebar } from "@/components/layout/ServiceSidebar";
 import { ServiceSchema } from "@/components/seo/ServiceSchema";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
   title:
@@ -50,6 +56,33 @@ export default function ZniesienieWspolwlasnosciPage() {
                   możliwości i zaproponujemy najlepszą strategię działania.
                 </p>
               </div>
+
+              {/* FAQ / More info */}
+              <section className="mt-10">
+                <h2 className="mb-4 text-2xl font-semibold text-slate-900">
+                  Więcej informacji; przykłady
+                </h2>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>Przykładowy temat 1</AccordionTrigger>
+                    <AccordionContent>
+                      Tutaj pojawi się treść dodana później przez kancelarię.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                    <AccordionTrigger>Przykładowy temat 2</AccordionTrigger>
+                    <AccordionContent>
+                      Tutaj pojawi się treść dodana później przez kancelarię.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-3">
+                    <AccordionTrigger>Przykładowy temat 3</AccordionTrigger>
+                    <AccordionContent>
+                      Tutaj pojawi się treść dodana później przez kancelarię.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </section>
             </article>
 
             {/* Sidebar - 1/3 */}
