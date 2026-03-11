@@ -7,72 +7,98 @@ import {
   TabsContent,
 } from "@/components/ui/tabs";
 
-const steps = [
-  {
-    value: "krok-1",
-    trigger: "01. Kontakt z Kancelarią",
-    content:
-      "To pierwszy krok do rozwiązania Twojego problemu prawnego. Skontaktuj się z nami telefonicznie lub mailowo — ustalimy, czy możemy Ci pomóc, i zaproponujemy termin spotkania lub rozmowy wstępnej. Nie pobieramy opłat za pierwszą rozmowę wstępną.",
-  },
-  {
-    value: "krok-2",
-    trigger: "02. Analiza sprawy",
-    content:
-      "W ramach analizy przekażemy Ci informację o możliwościach prawnych w Twojej sprawie, ryzyku procesowym i szacowanych kosztach postępowania. Na tym etapie oceniamy dokumenty i przedstawiamy rekomendowaną strategię działania.",
-  },
-  {
-    value: "krok-3",
-    trigger: "03. Omówienie warunków współpracy",
-    content:
-      "Nie ma dwóch jednakowych spraw. Warunki współpracy ustalamy indywidualnie — transparentnie omawiamy wynagrodzenie, zakres pełnomocnictwa i harmonogram działań. Dopiero po akceptacji warunków podpisujemy umowę.",
-  },
-  {
-    value: "krok-4",
-    trigger: "04. Prowadzenie sprawy",
-    content:
-      "Na tym etapie reprezentujemy Cię przed sądem lub w negocjacjach. Przygotowujemy pisma procesowe, gromadzimy dowody, uczestniczymy w rozprawach. Na bieżąco informujemy Cię o postępach i każdej istotnej decyzji w sprawie.",
-  },
-  {
-    value: "krok-5",
-    trigger: "05. Rozliczenie",
-    content:
-      "Zakończenie sprawy wiąże się z podsumowaniem wyników, rozliczeniem wynagrodzenia i — w miarę możliwości — odzyskaniem kosztów procesu od strony przeciwnej. Dbamy o to, by finalizacja była dla Ciebie jak najprostsza.",
-  },
-];
+const triggerClass =
+  "w-full justify-start text-left px-6 py-5 text-[15px] rounded-none border-0 border-b border-slate-200 border-l-4 border-l-transparent bg-transparent data-[state=active]:bg-white data-[state=active]:border-l-[#0088cc] data-[state=active]:shadow-none hover:bg-slate-100 data-[state=active]:text-slate-900 text-slate-500 m-0 outline-none focus-visible:ring-0 ring-0 focus:ring-0 transition-none";
 
 export function HowWeWork() {
   return (
-    <section className="flex flex-col gap-8 w-full my-12">
-      <h2 className="text-4xl font-serif text-slate-800">Jak działamy?</h2>
+    <section className="max-w-7xl mx-auto w-full mb-32 px-4 mt-12">
+      <h2 className="text-4xl font-serif text-slate-800 mb-8">Jak działamy?</h2>
 
-      <Tabs defaultValue="krok-1" className="grid grid-cols-1 md:grid-cols-12 gap-8 w-full">
-        <TabsList className="md:col-span-4 flex flex-col h-auto bg-transparent p-0 space-y-2 items-start justify-start">
-          {steps.map((step) => (
-            <TabsTrigger
-              key={step.value}
-              value={step.value}
-              className="w-full justify-start text-left px-6 py-4 text-base text-slate-600 bg-transparent hover:bg-slate-50 data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-md border-l-4 border-transparent data-[state=active]:border-blue-600 rounded-none transition-all whitespace-normal h-auto"
-            >
-              {step.trigger}
-            </TabsTrigger>
-          ))}
+      <Tabs
+        defaultValue="krok-1"
+        className="flex flex-col md:flex-row w-full border border-slate-200 bg-white overflow-hidden"
+      >
+        {/* LEFT COLUMN — menu */}
+        <TabsList className="flex flex-col w-full md:w-[35%] bg-slate-50 h-auto p-0 rounded-none border-r border-slate-200 justify-start items-start">
+          <TabsTrigger value="krok-1" className={triggerClass}>
+            01. Kontakt z Kancelarią
+          </TabsTrigger>
+          <TabsTrigger value="krok-2" className={triggerClass}>
+            02. Analiza sprawy
+          </TabsTrigger>
+          <TabsTrigger value="krok-3" className={triggerClass}>
+            03. Omówienie warunków współpracy
+          </TabsTrigger>
+          <TabsTrigger value="krok-4" className={triggerClass}>
+            04. Prowadzenie sprawy
+          </TabsTrigger>
+          <TabsTrigger value="krok-5" className={triggerClass}>
+            05. Rozliczenie
+          </TabsTrigger>
         </TabsList>
 
-        <div className="md:col-span-8">
-          {steps.map((step) => (
-            <TabsContent
-              key={step.value}
-              value={step.value}
-              className="mt-0 w-full outline-none"
-            >
-              <div className="bg-white p-8 md:p-10 shadow-[0_2px_20px_rgb(0,0,0,0.04)] rounded-xl border border-slate-100">
-                <h3 className="text-3xl font-serif text-[#0088cc] mb-4">
-                  {step.trigger}
-                </h3>
-                <p className="leading-relaxed text-slate-600">{step.content}</p>
-              </div>
-            </TabsContent>
-          ))}
+        {/* RIGHT COLUMN — content */}
+        <div className="w-full md:w-[65%] p-8 md:p-14 bg-white">
+          <TabsContent value="krok-1" className="mt-0 outline-none border-none">
+            <h3 className="text-3xl font-serif text-[#0088cc] mb-6">
+              01. Kontakt z Kancelarią
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-lg">
+              To pierwszy krok do rozwiązania Twojego problemu prawnego.
+              Skontaktuj się z nami telefonicznie lub mailowo — ustalimy, czy
+              możemy Ci pomóc, i zaproponujemy termin spotkania lub rozmowy
+              wstępnej. Nie pobieramy opłat za pierwszą rozmowę wstępną.
+            </p>
+          </TabsContent>
+
+          <TabsContent value="krok-2" className="mt-0 outline-none border-none">
+            <h3 className="text-3xl font-serif text-[#0088cc] mb-6">
+              02. Analiza sprawy
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-lg">
+              W ramach analizy przekażemy Ci informację o możliwościach prawnych
+              w Twojej sprawie, ryzyku procesowym i szacowanych kosztach
+              postępowania. Na tym etapie oceniamy dokumenty i przedstawiamy
+              rekomendowaną strategię działania.
+            </p>
+          </TabsContent>
+
+          <TabsContent value="krok-3" className="mt-0 outline-none border-none">
+            <h3 className="text-3xl font-serif text-[#0088cc] mb-6">
+              03. Omówienie warunków współpracy
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-lg">
+              Nie ma dwóch jednakowych spraw. Warunki współpracy ustalamy
+              indywidualnie — transparentnie omawiamy wynagrodzenie, zakres
+              pełnomocnictwa i harmonogram działań. Dopiero po akceptacji
+              warunków podpisujemy umowę.
+            </p>
+          </TabsContent>
+
+          <TabsContent value="krok-4" className="mt-0 outline-none border-none">
+            <h3 className="text-3xl font-serif text-[#0088cc] mb-6">
+              04. Prowadzenie sprawy
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-lg">
+              Na tym etapie reprezentujemy Cię przed sądem lub w negocjacjach.
+              Przygotowujemy pisma procesowe, gromadzimy dowody, uczestniczymy
+              w rozprawach. Na bieżąco informujemy Cię o postępach i każdej
+              istotnej decyzji w sprawie.
+            </p>
+          </TabsContent>
+
+          <TabsContent value="krok-5" className="mt-0 outline-none border-none">
+            <h3 className="text-3xl font-serif text-[#0088cc] mb-6">
+              05. Rozliczenie
+            </h3>
+            <p className="text-slate-700 leading-relaxed text-lg">
+              Zakończenie sprawy wiąże się z podsumowaniem wyników, rozliczeniem
+              wynagrodzenia i — w miarę możliwości — odzyskaniem kosztów procesu
+              od strony przeciwnej. Dbamy o to, by finalizacja była dla Ciebie
+              jak najprostsza.
+            </p>
+          </TabsContent>
         </div>
       </Tabs>
     </section>
