@@ -25,14 +25,14 @@ export default function SpadekPage() {
         url="https://podzialmajatku.pl/spadek"
       />
 
-      <section className="bg-gradient-to-br from-slate-50 to-blue-50/50">
+      <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <Breadcrumbs items={[{ label: "Dział spadku" }]} />
 
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
             {/* Main Content - 2/3 */}
             <article className="lg:col-span-2">
-              <h1 className="mb-6 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              <h1 className="mb-6 font-serif text-3xl font-bold tracking-tight text-[#2c2c2c] sm:text-4xl">
                 Postępowanie działowe przy podziale spadku (dział spadku)
               </h1>
 
@@ -46,7 +46,7 @@ export default function SpadekPage() {
               </p>
 
               <section className="mb-8">
-                <h2 className="mb-4 text-2xl font-semibold text-slate-900">
+                <h2 className="mb-4 font-serif text-2xl font-semibold text-[#2c2c2c]">
                   Dwa tryby działu spadku
                 </h2>
                 <p className="mb-4 leading-relaxed text-slate-600">
@@ -93,7 +93,7 @@ export default function SpadekPage() {
 
               {/* FAQ / More info */}
               <section className="mt-10">
-                <h2 className="mb-4 text-2xl font-semibold text-slate-900">
+                <h2 className="mb-4 font-serif text-2xl font-semibold text-[#2c2c2c]">
                   Więcej informacji; przykłady
                 </h2>
                 <Accordion type="single" collapsible className="w-full">

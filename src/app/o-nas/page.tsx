@@ -19,7 +19,7 @@ export default function ONasPage() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
             {/* Left column — text */}
             <div>
-              <h1 className="mb-6 text-3xl font-bold leading-tight tracking-tight text-primary sm:text-4xl lg:text-5xl">
+              <h1 className="mb-6 font-serif text-3xl font-bold leading-tight tracking-tight text-primary sm:text-4xl lg:text-5xl">
                 Pomożemy Ci w rozwiązaniu Twojego problemu prawnego
               </h1>
               <p className="mb-4 leading-relaxed text-slate-600">
