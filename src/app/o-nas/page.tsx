@@ -125,10 +125,7 @@ export default function ONasPage() {
 
       {/* How we work */}
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="mb-10 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Jak działamy?
-          </h2>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <HowWeWork />
         </div>
       </section>

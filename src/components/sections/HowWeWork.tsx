@@ -42,33 +42,37 @@ const steps = [
 
 export function HowWeWork() {
   return (
-    <Tabs defaultValue="krok-1" className="flex flex-col gap-4 md:flex-row md:gap-8">
-      <TabsList className="flex h-auto w-full flex-col space-y-1 bg-transparent p-0 md:w-1/3">
-        {steps.map((step) => (
-          <TabsTrigger
-            key={step.value}
-            value={step.value}
-            className="w-full justify-start rounded-lg border border-transparent px-4 py-3 text-left text-sm font-medium text-slate-600 transition-all data-[state=active]:border-primary data-[state=active]:bg-primary/5 data-[state=active]:text-primary"
-          >
-            {step.trigger}
-          </TabsTrigger>
-        ))}
-      </TabsList>
+    <section className="flex flex-col gap-8 w-full my-12">
+      <h2 className="text-4xl font-serif text-slate-800">Jak działamy?</h2>
 
-      <div className="md:w-2/3">
+      <Tabs defaultValue="krok-1" className="flex flex-col lg:flex-row gap-8 items-start w-full">
+        <TabsList className="flex flex-col h-auto w-full lg:w-1/3 bg-transparent p-0 space-y-1 items-start justify-start">
+          {steps.map((step) => (
+            <TabsTrigger
+              key={step.value}
+              value={step.value}
+              className="w-full justify-start text-left px-6 py-4 text-base font-normal text-slate-500 data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm border-l-4 border-transparent data-[state=active]:border-blue-600 rounded-none transition-all"
+            >
+              {step.trigger}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+
         {steps.map((step) => (
           <TabsContent
             key={step.value}
             value={step.value}
-            className="mt-0 rounded-xl border bg-white p-6 shadow-sm"
+            className="w-full lg:w-2/3 mt-0"
           >
-            <h3 className="mb-3 text-lg font-semibold text-slate-900">
-              {step.trigger}
-            </h3>
-            <p className="leading-relaxed text-slate-600">{step.content}</p>
+            <div className="bg-white p-8 shadow-sm">
+              <h3 className="mb-3 text-lg font-semibold text-slate-900">
+                {step.trigger}
+              </h3>
+              <p className="leading-relaxed text-slate-600">{step.content}</p>
+            </div>
           </TabsContent>
         ))}
-      </div>
-    </Tabs>
+      </Tabs>
+    </section>
   );
 }
