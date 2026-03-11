@@ -36,7 +36,7 @@ export function Footer() {
       {/* Dark footer */}
       <div className="bg-[#252525] text-slate-300">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
 
             {/* Column 1: Lexperiens */}
             <div>

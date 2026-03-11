@@ -15,7 +15,7 @@ export default function KontaktPage() {
         <Breadcrumbs items={[{ label: "Kontakt" }]} />
 
         <div className="space-y-8">
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-[#2c2c2c] sm:text-4xl">
+          <h1 className="font-serif text-2xl font-bold tracking-tight text-[#2c2c2c] sm:text-3xl md:text-4xl">
             Skontaktuj się z nami
           </h1>
 

@@ -48,7 +48,7 @@ export default function Home() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
           <div className="space-y-6">
-            <h1 className="font-serif text-4xl font-bold tracking-tight text-[#2c2c2c] sm:text-5xl">
+            <h1 className="font-serif text-3xl font-bold tracking-tight text-[#2c2c2c] sm:text-4xl lg:text-5xl">
               Profesjonalna pomoc w{" "}
               <span className="text-primary">podziale majątku</span>
             </h1>
@@ -128,7 +128,7 @@ export default function Home() {
       {/* Postępowania działowe - Intro */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="mb-8 font-serif text-3xl font-bold tracking-tight text-[#2c2c2c] sm:text-4xl">
+          <h2 className="mb-8 font-serif text-2xl font-bold tracking-tight text-[#2c2c2c] sm:text-3xl md:text-4xl">
             Postępowania działowe
           </h2>
           <p className="mb-4 text-sm font-medium uppercase tracking-wider text-primary">
@@ -242,7 +242,7 @@ export default function Home() {
       {/* Dlaczego warto wybrać kancelarię Lexperiens */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="mb-4 font-serif text-3xl font-bold tracking-tight text-[#2c2c2c] sm:text-4xl">
+          <h2 className="mb-4 font-serif text-2xl font-bold tracking-tight text-[#2c2c2c] sm:text-3xl md:text-4xl">
             Dlaczego warto wybrać Kancelarię Lexperiens?
           </h2>
           <p className="mb-8 max-w-3xl text-lg leading-relaxed text-slate-600">
