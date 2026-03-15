@@ -13,12 +13,14 @@ export function ServiceSchema({ name, description, url }: ServiceSchemaProps) {
     url,
     provider: {
       "@type": "LegalService",
-      name: "podzialmajatku.pl",
+      name: "Lexperiens Kancelaria Radców Prawnych Zgłobicki Rohde sp. p.",
       url: "https://podzialmajatku.pl",
-      telephone: "+48123456789",
+      telephone: "+48618937504",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Warszawa",
+        streetAddress: "ul. Mikołaja Reja 1/8",
+        postalCode: "60-826",
+        addressLocality: "Poznań",
         addressCountry: "PL",
       },
     },

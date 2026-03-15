@@ -7,6 +7,23 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "delivered@resend.dev";
 
+const subjectLabels: Record<string, string> = {
+  rozwod: "Rozwód / Podział majątku",
+  podzial: "Podział majątku wspólnego",
+  spadek: "Dział spadku",
+  wspolwlasnosc: "Zniesienie współwłasności",
+  inne: "Inne",
+};
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export async function sendContactEmail(formData: {
   name: string;
   email: string;
@@ -25,14 +42,6 @@ export async function sendContactEmail(formData: {
 
   const { name, email, phone, subject, message } = parsed.data;
 
-  const subjectLabels: Record<string, string> = {
-    rozwod: "Rozwód / Podział majątku",
-    podzial: "Podział majątku wspólnego",
-    spadek: "Dział spadku",
-    wspolwlasnosc: "Zniesienie współwłasności",
-    inne: "Inne",
-  };
-
   try {
     const { error } = await resend.emails.send({
       from: "Formularz kontaktowy <onboarding@resend.dev>",
@@ -44,23 +53,23 @@ export async function sendContactEmail(formData: {
         <table style="border-collapse:collapse;width:100%;max-width:600px;">
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Imię i Nazwisko</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${name}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${escapeHtml(name)}</td>
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Email</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${email}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${escapeHtml(email)}</td>
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Telefon</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${phone}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${escapeHtml(phone)}</td>
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Temat</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${subjectLabels[subject] || subject}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${escapeHtml(subjectLabels[subject] || subject)}</td>
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Wiadomość</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${message.replace(/\n/g, "<br>")}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${escapeHtml(message).replace(/\n/g, "<br>")}</td>
           </tr>
         </table>
         <p style="margin-top:16px;color:#666;font-size:12px;">

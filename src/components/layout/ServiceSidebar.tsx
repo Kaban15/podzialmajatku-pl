@@ -7,6 +7,12 @@ const reasons = [
   { icon: Users, text: "Indywidualne podejście do każdej sprawy" },
 ];
 
+const phones = [
+  { href: "tel:+48618937504", display: "+48 61 893 75 04" },
+  { href: "tel:+48797623957", display: "+48 797 623 957" },
+  { href: "tel:+48789483216", display: "+48 789 483 216" },
+];
+
 export function ServiceSidebar() {
   return (
     <aside className="space-y-6 lg:sticky lg:top-24">
@@ -24,24 +30,14 @@ export function ServiceSidebar() {
           ))}
         </ul>
         <div className="mt-5 space-y-2">
-          <Button asChild variant="outline" className="w-full">
-            <a href="tel:+48618937504">
-              <Phone className="size-4" />
-              +48 61 893 75 04
-            </a>
-          </Button>
-          <Button asChild variant="outline" className="w-full">
-            <a href="tel:+48797623957">
-              <Phone className="size-4" />
-              +48 797 623 957
-            </a>
-          </Button>
-          <Button asChild variant="outline" className="w-full">
-            <a href="tel:+48789483216">
-              <Phone className="size-4" />
-              +48 789 483 216
-            </a>
-          </Button>
+          {phones.map((p) => (
+            <Button key={p.href} asChild variant="outline" className="w-full">
+              <a href={p.href}>
+                <Phone className="size-4" />
+                {p.display}
+              </a>
+            </Button>
+          ))}
         </div>
       </div>
     </aside>

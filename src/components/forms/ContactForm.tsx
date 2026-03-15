@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -36,8 +35,6 @@ const subjects = [
 ];
 
 export function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -49,8 +46,9 @@ export function ContactForm() {
     },
   });
 
+  const { isSubmitting } = form.formState;
+
   async function onSubmit(data: ContactFormData) {
-    setIsSubmitting(true);
     try {
       const result = await sendContactEmail(data);
 
@@ -68,8 +66,6 @@ export function ContactForm() {
       toast.error("Błąd połączenia", {
         description: "Sprawdź połączenie internetowe i spróbuj ponownie.",
       });
-    } finally {
-      setIsSubmitting(false);
     }
   }
 
