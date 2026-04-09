@@ -9,7 +9,9 @@ export const contactFormSchema = z.object({
       /^(\+48)?[\s-]?\d{3}[\s-]?\d{3}[\s-]?\d{3}$/,
       "Podaj prawidłowy numer telefonu (np. 123 456 789)"
     ),
-  subject: z.string().min(1, "Wybierz temat sprawy"),
+  subject: z.enum(["rozwod", "podzial", "spadek", "wspolwlasnosc", "inne"], {
+    message: "Wybierz temat sprawy",
+  }),
   message: z.string().min(10, "Opis musi mieć co najmniej 10 znaków"),
 });
 

@@ -2,6 +2,7 @@
 
 import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/schemas";
+import { isRateLimited } from "@/lib/rate-limit";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -31,6 +32,13 @@ export async function sendContactEmail(formData: {
   subject: string;
   message: string;
 }): Promise<{ success: boolean; error?: string }> {
+  if (isRateLimited(formData.email)) {
+    return {
+      success: false,
+      error: "Zbyt wiele wiadomości. Spróbuj ponownie za minutę.",
+    };
+  }
+
   const parsed = contactFormSchema.safeParse(formData);
 
   if (!parsed.success) {
@@ -46,7 +54,7 @@ export async function sendContactEmail(formData: {
     const { error } = await resend.emails.send({
       from: "Formularz kontaktowy <onboarding@resend.dev>",
       to: CONTACT_EMAIL,
-      subject: `Nowe zapytanie: ${subjectLabels[subject] || subject}`,
+      subject: `Nowe zapytanie: ${subjectLabels[subject]}`,
       replyTo: email,
       html: `
         <h2>Nowe zapytanie z formularza kontaktowego</h2>
@@ -65,7 +73,7 @@ export async function sendContactEmail(formData: {
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Temat</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${escapeHtml(subjectLabels[subject] || subject)}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${escapeHtml(subjectLabels[subject])}</td>
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Wiadomość</td>

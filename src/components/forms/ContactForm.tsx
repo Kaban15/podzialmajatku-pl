@@ -41,7 +41,7 @@ export function ContactForm() {
       name: "",
       email: "",
       phone: "",
-      subject: "",
+      subject: undefined,
       message: "",
     },
   });
