@@ -22,8 +22,8 @@ export function ServiceSidebar() {
           Dlaczego my?
         </h3>
         <ul className="space-y-3">
-          {reasons.map((r, i) => (
-            <li key={i} className="flex items-start gap-3">
+          {reasons.map((r) => (
+            <li key={r.text} className="flex items-start gap-3">
               <r.icon className="mt-0.5 size-4 shrink-0 text-primary" />
               <span className="text-sm text-slate-600">{r.text}</span>
             </li>
