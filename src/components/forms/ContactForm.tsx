@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { Send, Loader2 } from "lucide-react";
 
-import { contactFormSchema, type ContactFormData } from "@/lib/schemas";
+import { contactFormSchema, SUBJECT_OPTIONS, type ContactFormData } from "@/lib/schemas";
 import { sendContactEmail } from "@/lib/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,13 +26,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const subjects = [
-  { value: "rozwod", label: "Rozwód / Podział majątku" },
-  { value: "podzial", label: "Podział majątku wspólnego" },
-  { value: "spadek", label: "Dział spadku" },
-  { value: "wspolwlasnosc", label: "Zniesienie współwłasności" },
-  { value: "inne", label: "Inne" },
-];
 
 export function ContactForm() {
   const form = useForm<ContactFormData>({
@@ -140,7 +133,7 @@ export function ContactForm() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {subjects.map((s) => (
+                  {SUBJECT_OPTIONS.map((s) => (
                     <SelectItem key={s.value} value={s.value}>
                       {s.label}
                     </SelectItem>

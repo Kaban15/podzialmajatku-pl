@@ -1,20 +1,13 @@
 "use server";
 
 import { Resend } from "resend";
-import { contactFormSchema } from "@/lib/schemas";
+import { contactFormSchema, SUBJECT_LABELS } from "@/lib/schemas";
 import { isRateLimited } from "@/lib/rate-limit";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "delivered@resend.dev";
 
-const subjectLabels: Record<string, string> = {
-  rozwod: "Rozwód / Podział majątku",
-  podzial: "Podział majątku wspólnego",
-  spadek: "Dział spadku",
-  wspolwlasnosc: "Zniesienie współwłasności",
-  inne: "Inne",
-};
 
 function escapeHtml(str: string): string {
   return str
@@ -54,7 +47,7 @@ export async function sendContactEmail(formData: {
     const { error } = await resend.emails.send({
       from: "Formularz kontaktowy <onboarding@resend.dev>",
       to: CONTACT_EMAIL,
-      subject: `Nowe zapytanie: ${subjectLabels[subject]}`,
+      subject: `Nowe zapytanie: ${SUBJECT_LABELS[subject]}`,
       replyTo: email,
       html: `
         <h2>Nowe zapytanie z formularza kontaktowego</h2>
@@ -73,7 +66,7 @@ export async function sendContactEmail(formData: {
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Temat</td>
-            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${escapeHtml(subjectLabels[subject])}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #eee;">${escapeHtml(SUBJECT_LABELS[subject])}</td>
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:bold;border-bottom:1px solid #eee;">Wiadomość</td>

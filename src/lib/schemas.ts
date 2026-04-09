@@ -1,5 +1,17 @@
 import { z } from "zod";
 
+export const SUBJECT_OPTIONS = [
+  { value: "rozwod", label: "Rozwód / Podział majątku" },
+  { value: "podzial", label: "Podział majątku wspólnego" },
+  { value: "spadek", label: "Dział spadku" },
+  { value: "wspolwlasnosc", label: "Zniesienie współwłasności" },
+  { value: "inne", label: "Inne" },
+] as const;
+
+export const SUBJECT_LABELS: Record<string, string> = Object.fromEntries(
+  SUBJECT_OPTIONS.map((s) => [s.value, s.label])
+);
+
 export const contactFormSchema = z.object({
   name: z.string().min(2, "Imię i nazwisko musi mieć co najmniej 2 znaki"),
   email: z.string().email("Podaj prawidłowy adres email"),
