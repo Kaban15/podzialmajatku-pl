@@ -34,7 +34,7 @@ export default function RozwodPage() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
             {/* Main Content - 2/3 */}
             <article className="lg:col-span-2">
-              <h1 className="mb-6 font-serif text-2xl font-bold tracking-tight text-[#2c2c2c] sm:text-3xl md:text-4xl">
+              <h1 className="mb-6 font-serif text-2xl font-bold tracking-tight text-body sm:text-3xl md:text-4xl">
                 Postępowanie działowe przy podziale majątku wspólnego małżonków
                 (po rozwodzie lub rozdzielności majątkowej)
               </h1>
@@ -49,7 +49,7 @@ export default function RozwodPage() {
               </p>
 
               <section className="mb-8">
-                <h2 className="mb-4 font-serif text-2xl font-semibold text-[#2c2c2c]">
+                <h2 className="mb-4 font-serif text-2xl font-semibold text-body">
                   Kluczowe regulacje prawne
                 </h2>
                 <p className="mb-4 leading-relaxed text-slate-600">
@@ -84,7 +84,7 @@ export default function RozwodPage() {
 
               {/* FAQ / More info */}
               <section className="mt-10">
-                <h2 className="mb-4 font-serif text-2xl font-semibold text-[#2c2c2c]">
+                <h2 className="mb-4 font-serif text-2xl font-semibold text-body">
                   Więcej informacji; przykłady
                 </h2>
                 <Accordion type="single" collapsible className="w-full">

@@ -54,7 +54,7 @@ export function Navbar() {
                 <Link
                   href={link.href}
                   className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                    isActive ? "text-primary" : "text-[#2c2c2c]"
+                    isActive ? "text-primary" : "text-body"
                   }`}
                 >
                   {link.label}
@@ -105,7 +105,7 @@ export function Navbar() {
                     href={link.href}
                     onClick={() => setOpen(false)}
                     className={`px-3 py-2.5 text-sm font-medium transition-colors hover:text-primary ${
-                      isActive ? "text-primary" : "text-[#2c2c2c]"
+                      isActive ? "text-primary" : "text-body"
                     }`}
                   >
                     {link.label}

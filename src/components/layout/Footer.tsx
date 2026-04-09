@@ -26,7 +26,7 @@ export function Footer() {
           </div>
           <Link
             href="/kontakt"
-            className="shrink-0 border border-[#2c2c2c] px-6 py-2.5 text-sm font-medium text-[#2c2c2c] transition-colors hover:bg-[#2c2c2c] hover:text-white"
+            className="shrink-0 border border-body px-6 py-2.5 text-sm font-medium text-body transition-colors hover:bg-body hover:text-white"
           >
             Skontaktuj się z nami
           </Link>
@@ -34,7 +34,7 @@ export function Footer() {
       </div>
 
       {/* Dark footer */}
-      <div className="bg-[#252525] text-slate-300">
+      <div className="bg-footer text-slate-300">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
 

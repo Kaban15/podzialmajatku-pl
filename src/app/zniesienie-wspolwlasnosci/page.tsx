@@ -34,7 +34,7 @@ export default function ZniesienieWspolwlasnosciPage() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
             {/* Main Content - 2/3 */}
             <article className="lg:col-span-2">
-              <h1 className="mb-6 font-serif text-2xl font-bold tracking-tight text-[#2c2c2c] sm:text-3xl md:text-4xl">
+              <h1 className="mb-6 font-serif text-2xl font-bold tracking-tight text-body sm:text-3xl md:text-4xl">
                 Postępowanie działowe przy podziale nieruchomości wspólnej
               </h1>
 
@@ -59,7 +59,7 @@ export default function ZniesienieWspolwlasnosciPage() {
 
               {/* FAQ / More info */}
               <section className="mt-10">
-                <h2 className="mb-4 font-serif text-2xl font-semibold text-[#2c2c2c]">
+                <h2 className="mb-4 font-serif text-2xl font-semibold text-body">
                   Więcej informacji; przykłady
                 </h2>
                 <Accordion type="single" collapsible className="w-full">

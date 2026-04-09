@@ -15,7 +15,7 @@ export default function KontaktPage() {
         <Breadcrumbs items={[{ label: "Kontakt" }]} />
 
         <div className="space-y-8">
-          <h1 className="font-serif text-2xl font-bold tracking-tight text-[#2c2c2c] sm:text-3xl md:text-4xl">
+          <h1 className="font-serif text-2xl font-bold tracking-tight text-body sm:text-3xl md:text-4xl">
             Skontaktuj się z nami
           </h1>
 
@@ -35,13 +35,13 @@ export default function KontaktPage() {
             </p>
           </div>
 
-          <h3 className="font-serif text-xl font-bold leading-snug tracking-tight text-[#2c2c2c] sm:text-2xl">
+          <h3 className="font-serif text-xl font-bold leading-snug tracking-tight text-body sm:text-2xl">
             Prowadzimy sprawy w całej Polsce, dla klientów z kraju oraz
             z zagranicy.
           </h3>
 
           <div className="border bg-white p-8 shadow-sm">
-            <p className="mb-6 text-lg font-semibold text-[#2c2c2c]">
+            <p className="mb-6 text-lg font-semibold text-body">
               Lexperiens Kancelaria Radców Prawnych sp.&nbsp;p.
             </p>
             <ul className="space-y-4 text-slate-600">
