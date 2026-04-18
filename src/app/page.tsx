@@ -122,14 +122,26 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Tiles grid */}
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {tiles.map((tile) => {
+          {/* Tiles grid — staggered "brick" layout on desktop */}
+          <div className="mt-12 grid auto-rows-fr grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 md:grid-rows-3">
+            {tiles.map((tile, idx) => {
               const Icon = tile.icon;
+              const positions = [
+                "md:col-start-1 md:row-start-1",
+                "md:col-start-3 md:row-start-1",
+                "md:col-start-2 md:row-start-2",
+                "md:col-start-4 md:row-start-2",
+                "md:col-start-1 md:row-start-3",
+                "md:col-start-3 md:row-start-3",
+              ];
               return (
-                <Link key={tile.href} href={tile.href}>
+                <Link
+                  key={tile.href}
+                  href={tile.href}
+                  className={positions[idx]}
+                >
                   <Card className="h-full cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
-                    <CardContent className="flex flex-col items-center justify-center gap-4 p-6 text-center">
+                    <CardContent className="flex h-full flex-col items-center justify-center gap-4 p-6 text-center">
                       <div className="flex size-14 items-center justify-center rounded-full bg-primary/10">
                         <Icon className="size-7 text-primary" />
                       </div>
