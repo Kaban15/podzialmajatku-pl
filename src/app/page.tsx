@@ -1,5 +1,16 @@
 import Link from "next/link";
-import { Shield, Clock, Users, CheckCircle, Scale, FileText, Home as HomeIcon, Info } from "lucide-react";
+import {
+  Shield,
+  Clock,
+  Users,
+  CheckCircle,
+  Scale,
+  FileText,
+  Home as HomeIcon,
+  Gavel,
+  BookOpen,
+  Newspaper,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const benefits = [
@@ -22,8 +33,14 @@ const tiles = [
     description: "Podział majątku wspólnego małżonków po rozwodzie",
   },
   {
-    title: "Spadek",
-    href: "/spadek",
+    title: "Postępowanie działowe",
+    href: "/postepowanie-dzialowe",
+    icon: Gavel,
+    description: "Kompleksowe prowadzenie postępowań działowych",
+  },
+  {
+    title: "Spadki",
+    href: "/spadki",
     icon: FileText,
     description: "Umowny i sądowy dział spadku",
   },
@@ -34,10 +51,16 @@ const tiles = [
     description: "Zniesienie współwłasności nieruchomości",
   },
   {
-    title: "O nas",
-    href: "/o-nas",
-    icon: Info,
-    description: "Poznaj Kancelarię Lexperiens",
+    title: "Baza wiedzy",
+    href: "/baza-wiedzy",
+    icon: BookOpen,
+    description: "Artykuły i praktyczne wskazówki prawne",
+  },
+  {
+    title: "Aktualności",
+    href: "/aktualnosci",
+    icon: Newspaper,
+    description: "Najnowsze informacje z życia kancelarii",
   },
 ];
 
@@ -100,7 +123,7 @@ export default function Home() {
           </div>
 
           {/* Tiles grid */}
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
             {tiles.map((tile) => {
               const Icon = tile.icon;
               return (

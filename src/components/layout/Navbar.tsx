@@ -15,10 +15,12 @@ import {
 } from "@/components/ui/sheet";
 
 const navLinks = [
-  { href: "/", label: "Strona główna" },
   { href: "/rozwod", label: "Rozwód" },
-  { href: "/spadek", label: "Spadek" },
+  { href: "/postepowanie-dzialowe", label: "Postępowanie działowe" },
+  { href: "/spadki", label: "Spadki" },
   { href: "/zniesienie-wspolwlasnosci", label: "Współwłasność" },
+  { href: "/baza-wiedzy", label: "Baza wiedzy" },
+  { href: "/aktualnosci", label: "Aktualności" },
   { href: "/o-nas", label: "O nas" },
   { href: "/kontakt", label: "Kontakt" },
 ];

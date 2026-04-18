@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 const specializations = [
   { href: "/rozwod", label: "Podział majątku po rozwodzie" },
-  { href: "/spadek", label: "Dział spadku" },
+  { href: "/spadki", label: "Dział spadku" },
   { href: "/zniesienie-wspolwlasnosci", label: "Zniesienie współwłasności" },
 ];
 

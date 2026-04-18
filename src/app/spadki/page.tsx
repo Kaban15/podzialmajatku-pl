@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     "Postępowanie działowe przy podziale spadku – umowny i sądowy dział spadku. Doświadczony radca prawny w Poznaniu. Kancelaria Lexperiens – pomoc prawna w sprawach spadkowych.",
 };
 
-export default function SpadekPage() {
+export default function SpadkiPage() {
   return (
     <>
       <ServiceSchema
         name="Dział spadku"
         description="Postępowanie działowe przy podziale spadku – umowny i sądowy dział spadku. Profesjonalna pomoc prawna Kancelarii Lexperiens w Poznaniu."
-        url="https://podzialmajatku.pl/spadek"
+        url="https://podzialmajatku.pl/spadki"
       />
 
       <section className="bg-white">

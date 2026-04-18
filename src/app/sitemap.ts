@@ -17,8 +17,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/spadek`,
-      lastModified: new Date("2026-04-09"),
+      url: `${BASE_URL}/postepowanie-dzialowe`,
+      lastModified: new Date("2026-04-18"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/spadki`,
+      lastModified: new Date("2026-04-18"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -27,6 +33,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date("2026-04-09"),
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/baza-wiedzy`,
+      lastModified: new Date("2026-04-18"),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/aktualnosci`,
+      lastModified: new Date("2026-04-18"),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/o-nas`,
+      lastModified: new Date("2026-04-18"),
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${BASE_URL}/kontakt`,
